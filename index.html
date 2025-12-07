@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Qur'an Reader — Per Ayat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>📖 Qur'an — Dengarkan per Ayat</h1>
+      <p class="muted">Klik START sekali lalu pilih surah/ayat. Jika reciter menyediakan audio per-ayat, akan langsung diputar.</p>
+    </header>
+
+    <div class="toolbar">
+      <button id="startBtn" class="primary">▶ Mulai Audio</button>
+
+      <label>Surah
+        <select id="surahSelect"></select>
+      </label>
+
+      <label>Reciter
+        <select id="reciterSelect">
+          <option value="ar.alafasy">Mishary Alafasy (murattal)</option>
+          <option value="ar.minshawi">Minshawi (murattal)</option>
+          <option value="ar.abdulbasitmurattal">Abdul Basit (murattal)</option>
+        </select>
+      </label>
+
+      <label>Kecepatan
+        <input id="speed" type="range" min="0.6" max="1.2" step="0.05" value="0.85">
+        <span id="speedLabel">0.85x</span>
+      </label>
+    </div>
+
+    <div class="controls">
+      <button id="prevBtn">⏮ Prev</button>
+      <button id="playBtn">▶ Play</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="stopBtn">⏹ Stop</button>
+      <button id="nextBtn">⏭ Next</button>
+    </div>
+
+    <main class="main">
+      <section class="left">
+        <div id="status" class="status">Status: menunggu START</div>
+        <div id="ayahList" class="ayah-list" aria-live="polite"></div>
+      </section>
+
+      <section class="right">
+        <div class="player-box">
+          <audio id="player" preload="auto"></audio>
+          <label>Ambience (opsional): <input id="ambFile" type="file" accept="audio/*"></label>
+          <button id="ambToggle">🔊 Nyalakan Ambience</button>
+        </div>
+        <div id="translation" class="translation"></div>
+      </section>
+    </main>
+
+    <footer class="footer">Project oleh JASWA ARIANSYA — sumber: api.alquran.cloud & CDN</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

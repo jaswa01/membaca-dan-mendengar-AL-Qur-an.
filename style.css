@@ -1,0 +1,51 @@
+:root{
+  --bg:#071218;
+  --card:#0f2830;
+  --accent:#28d1b8;
+  --muted:#99cbbf;
+  --text:#e6fffb;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family: "Segoe UI", Roboto, "Amiri", serif;background:linear-gradient(180deg,#f4f7f6,#e7efe9);color:#072018;
+}
+.app{max-width:1100px;margin:18px auto;padding:18px}
+header h1{margin:0;font-size:22px}
+.muted{color:#4b6b5a;margin-top:6px;font-size:13px}
+
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0;align-items:center}
+.toolbar label{font-size:14px;color:#213;display:flex;align-items:center;gap:8px}
+.toolbar select,input[type="range"]{padding:8px;border-radius:8px;border:1px solid #cfd8d3;background:white}
+
+.primary{background:var(--accent);color:#003;padding:8px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+
+.controls{display:flex;gap:8px;margin-bottom:12px}
+.controls button{padding:8px 12px;border-radius:8px;border:1px solid #cfd8d3;background:white;cursor:pointer}
+
+.main{display:flex;gap:16px}
+.left{flex:1}
+.right{width:380px}
+
+.status{padding:10px;background:#fff;border-radius:8px;border:1px solid #e1e9e5;margin-bottom:12px;color:#2b5946}
+
+.ayah-list{max-height:62vh;overflow:auto;border-radius:10px;padding:10px;background:#fff;border:1px solid #e2eae6}
+.ayah{
+  padding:12px;border-radius:8px;margin-bottom:8px;background:transparent;border:1px solid transparent;transition:all .15s;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+}
+.ayah:hover{transform:translateY(-2px);background:#f1fbf7;border-color:#def3ea}
+.ayah .arabic{direction:rtl;text-align:right;font-size:22px;line-height:1.8}
+.ayah .meta{color:var(--muted);font-size:13px;margin-left:12px;max-width:180px;text-align:left}
+
+.ayah.active{background:linear-gradient(90deg, rgba(40,209,184,0.06), rgba(255,209,102,0.03));border:1px solid rgba(40,209,184,0.12);box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+
+.player-box{background:#fff;padding:12px;border-radius:8px;border:1px solid #e2eae6}
+.translation{margin-top:12px;background:#fff;padding:12px;border-radius:8px;border:1px solid #e2eae6;font-size:15px}
+
+.footer{margin-top:12px;color:#5b6b63;font-size:13px;text-align:center}
+
+/* responsive */
+@media (max-width:900px){
+  .main{flex-direction:column}
+  .right{width:100%}
+}
